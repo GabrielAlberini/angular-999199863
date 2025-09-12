@@ -1,0 +1,23 @@
+<app-header></app-header>
+<h2>Página de contacto</h2>
+
+<form [formGroup]="contactForm" (submit)="onSubmit()">
+  <label>Nombre:</label>
+  <input type="text" formControlName="nombre">
+  @if(contactForm.get("nombre")?.invalid && contactForm.get("nombre")?.touched){
+  <small style="color: red;">El mensaje es obligatorio y mímino de 3 caracteres.</small>
+  }
+  <label>Correo electrónico:</label>
+  <input type="email" formControlName="email">
+  @if(contactForm.get("email")?.invalid && contactForm.get("email")?.touched){
+  <small style="color: red;">El correo electrónico tiene que ser valido.</small>
+  }
+  <label>Mensaje:</label>
+  <textarea formControlName="mensaje"></textarea>
+  @if(contactForm.get("mensaje")?.invalid && contactForm.get("mensaje")?.touched){
+  <small style="color: red;">El mensaje como mínimo tiene que tener 10 caractres.</small>
+  }
+  <button>Enviar</button>
+</form>
+
+<app-footer></app-footer>

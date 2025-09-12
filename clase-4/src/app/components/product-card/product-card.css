@@ -1,0 +1,12 @@
+div {
+  border: 1px solid black;
+  margin: 5px;
+  padding: 10px;
+  transition: scale 0.3s;
+}
+
+div:hover {
+  background-color: thistle;
+  scale: 1.01;
+  cursor: pointer;
+}
